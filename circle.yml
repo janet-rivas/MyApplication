@@ -10,6 +10,7 @@ machine:
     environment:
         ANDROID_HOME: /usr/local/android-sdk-linux
 
+
 dependencies:
     override:
         - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.3,android-25,extra-google-m2repository,extra-google-google_play_services,extra-android-support
@@ -18,15 +19,14 @@ dependencies:
 checkout:
    post:
         - cp -r licenses/. $ANDROID_HOME/licenses
+
 test:
     override:
         - (./gradlew assemble):
             timeout: 360
 
 deployment:
-    develop:
-        branch: master
-          commands:
-            - ./deploy_dev.sh
-
-
+  production:
+    branch: master
+    commands:
+      - ./deploy_prod.sh
