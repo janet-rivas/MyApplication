@@ -20,6 +20,16 @@ test:
         - (./gradlew assemble):
             timeout: 360
 
-checkout:
-   post:
-        - cp -r licenses/. $ANDROID_HOME/licenses
+
+deployment:
+    hockey:
+        branch: master
+          commands:
+            # this command is for ios - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEYAPP_TOKEN
+            # deploy in Android
+           - ./deploy_dev.sh
+
+
+
+
+
