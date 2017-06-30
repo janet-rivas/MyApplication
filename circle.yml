@@ -20,6 +20,3 @@ test:
         - (./gradlew assemble):
             timeout: 360
 
-checkout:
-   post:
-        - cp -r licenses/. $ANDROID_HOME/licenses
