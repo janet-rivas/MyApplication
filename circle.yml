@@ -30,3 +30,4 @@ deployment:
     branch: master
     commands:
       - sh ./deploy_dev.sh
+      
