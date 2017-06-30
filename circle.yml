@@ -23,11 +23,3 @@ test:
 checkout:
    post:
         - cp -r licenses/. $ANDROID_HOME/licenses
-
-deployment:
-    hockey:
-        branch: master
-          commands:
-            # this command is for ios - ipa distribute:hockeyapp -m "circleci build" --token $HOCKEYAPP_TOKEN
-            # deploy in Android
-            sh ./deploy_dev.sh
