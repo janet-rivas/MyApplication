@@ -24,7 +24,6 @@ test:
     override:
         - (./gradlew assemble):
             timeout: 360
-        - cp -r MyApplication/build/outputs $CIRCLE_ARTIFACTS
 
 deployment:
   production:
